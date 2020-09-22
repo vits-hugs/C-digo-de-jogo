@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class kartz : Inimigo
+public class Orc : Inimigo
 {
-   private string pT = "é 13 porra";
-   private string gorpe = "131313";
+   private string ataque = "haha";
+   private string SgolpeFatal = "Iaaaa";
    public override string Agir()
    {
        Atacar(1.3f);
        if(this.Getvida() == 13)
        {
-           EstrelasPT();
-           return gorpe;
+           GolpeFatal();
+           return SgolpeFatal;
        }
 
 
        return pT;
    }
-   private void EstrelasPT()
+   private void GolpeFatal()
    {
        Atacar(13);
    }
