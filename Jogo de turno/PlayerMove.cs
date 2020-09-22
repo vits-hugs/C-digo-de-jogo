@@ -5,9 +5,13 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private Animator anim;
+    
+    //velocidade vertical e horizontal
     public float Hvelo;
     public float Vvelo;
+    
     private Vector2 movimento;
+    
     [SerializeField]
     private float speed;
 
