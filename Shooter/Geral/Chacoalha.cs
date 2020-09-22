@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Chacoalha : MonoBehaviour
 {
-  
-   
-   
    public IEnumerator Shake (float duration, float magnitude)
    {
        Vector3 originalPos = transform.localPosition;
@@ -22,8 +19,6 @@ public class Chacoalha : MonoBehaviour
 
            yield return null;
         }
-
         transform.localPosition = originalPos;
-          
    }
 }
