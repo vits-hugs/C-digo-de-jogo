@@ -22,7 +22,7 @@ public class iniciaCombate : MonoBehaviour
 
     private SpriteRenderer sprite;
 
-    public GerenciadorBatalha geBat;
+    public GerenciadorBatalha getBat;
     
 
     [SerializeField]
@@ -57,7 +57,7 @@ public class iniciaCombate : MonoBehaviour
         sprite = vilao.GetComponent<SpriteRenderer>();
         sprite.sortingLayerName="Combate";
         canvas.SetActive(true);
-        geBat.ReStart();
+        getBat.ReStart();
         salva_pos = new Vector3(transform.position.x,transform.position.y,0);
         vilao.transform.position = new Vector3(enemyPlace.position.x,enemyPlace.position.y,0);
         this.transform.position = new Vector3(jogadorPlace.position.x,jogadorPlace.position.y,0);
