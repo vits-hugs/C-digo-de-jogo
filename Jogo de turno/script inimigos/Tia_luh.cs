@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Tia_luh : Inimigo
 {
-    private string tialu = "mama";
+
     private int ChoiceAtaque = 0;
+    
   public override string Agir()
   { 
       ChoiceAtaque = Random.Range(0,2);
@@ -18,11 +19,8 @@ public class Tia_luh : Inimigo
         EquaçãoMortal();
         return "pow";
       }
-
-
-
       Debug.Log("sou tia lue");
-      return tialu;
+      return "sou tia lue";
   }
   #region Ataques
   private void ChuvadePoligonos()
