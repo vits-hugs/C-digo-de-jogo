@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inimigo : MonoBehaviour
 {   
     //interações
-    private string _fala = "cu";
+    private string _fala = "414141";
     private GameObject jogador;
     private Inimigo Jogador;
     //status base
@@ -53,7 +53,7 @@ public class Inimigo : MonoBehaviour
     public virtual void Fazturno()
     {
         this.Envenenado(Veneno);
-        Debug.Log("venaf");
+        Debug.Log("inimigo envenenado");
     }
 
     public virtual string Agir()
