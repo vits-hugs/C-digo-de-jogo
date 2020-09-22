@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GordodaBad : Inimigo
+public class Ogro : Inimigo
 {
  private string gfala = "BARRIGADA MONSTRO";
  public override string Agir(){
