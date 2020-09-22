@@ -44,10 +44,7 @@ public class HealthBarinimigo : MonoBehaviour
         }
         else
         {
-            
             barra.fillAmount -= 0.01f;
-
-            
         }
     }
 }
