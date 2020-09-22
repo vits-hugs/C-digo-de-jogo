@@ -32,14 +32,7 @@ public class iniciaCombate : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-        
-    }
+    
     public void sumacombat(){
         vilao = null;
         canvas.SetActive(false);
@@ -48,22 +41,28 @@ public class iniciaCombate : MonoBehaviour
         this.GetComponent<PlayerMove>().enabled = true;
         anim.SetBool("isCombate",false);
     }
+    
+    //Essa Função é chamada quando ocorre colisão
     void OnTriggerEnter2D(Collider2D other){
+    // salvando e configurando posição da camera
         saveCam = new Vector3(camera.transform.position.x,camera.transform.position.y,-10);
         camera.transform.position = new Vector3(camPlace.position.x,camPlace.position.y,-10) ;
+      
         anim.SetBool("isCombate",true);
+        //Configurando inimigo
         vilao = other.gameObject;
-        Debug.Log(vilao);
         sprite = vilao.GetComponent<SpriteRenderer>();
         sprite.sortingLayerName="Combate";
+        
+        //Ativando tela de combate
         canvas.SetActive(true);
         getBat.ReStart();
         salva_pos = new Vector3(transform.position.x,transform.position.y,0);
+        // definindo posição do jogador e inimigo 
         vilao.transform.position = new Vector3(enemyPlace.position.x,enemyPlace.position.y,0);
         this.transform.position = new Vector3(jogadorPlace.position.x,jogadorPlace.position.y,0);
+        //Desabilita jogador 
         this.GetComponent<PlayerMove>().enabled = false;
-        
-
     }
 
     
