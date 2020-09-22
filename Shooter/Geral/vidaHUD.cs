@@ -90,10 +90,6 @@ public class vidaHUD : MonoBehaviour
             }
             SceneManager.LoadScene("PERDESTE");
             }
-        }
-
-       
-        
-                
+        }          
     }
 }
