@@ -6,14 +6,19 @@ public class iniciaCombate : MonoBehaviour
 {
     [SerializeField]
     public GameObject vilao;
+    
+    //registro da posição do jogador e da camera pré-combate.
     public Vector3 salva_pos;
     private Vector3 saveCam;
+    
     private Animator anim;
-
+    
+    //posições pré-definidas pra momento do combate
     public Transform enemyPlace;
     public Transform jogadorPlace;
-    public Transform camera;
     public Transform camPlace;
+    
+    public Transform camera;
 
     private SpriteRenderer sprite;
 
