@@ -25,10 +25,6 @@ public class vidaHUD : MonoBehaviour
         dano = GetComponent<AudioSource>();
         vida = 3;
     }
-    void Start(){
-        
-        
-    }
     // Update is called once per frame
 
     void Update()
