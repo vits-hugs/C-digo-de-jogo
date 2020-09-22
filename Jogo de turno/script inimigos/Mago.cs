@@ -2,32 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tia_luh : Inimigo
+public class mago : Inimigo
 {
 
-    private int ChoiceAtaque = 0;
+    private int ChoiceAtaque;
     
   public override string Agir()
   { 
       ChoiceAtaque = Random.Range(0,2);
       if(ChoiceAtaque == 0)
       {
-      ChuvadePoligonos();
-      return "chuveneos de poliguenos";
+      Misseis();
+      return "misseis magicos";
       }
       else{
-        EquaçãoMortal();
+        BoladeFogo();
         return "pow";
       }
-      Debug.Log("sou tia lue");
-      return "sou tia lue";
+      Debug.Log("mago");
+      return "mago";
   }
+  
   #region Ataques
-  private void ChuvadePoligonos()
+  
+  private void Misseis()
   {
     Atacar(Random.Range(0,4));
   }
-  private void EquaçãoMortal()
+  private void BoladeFogo()
   {
       Atacar(2);
   }
