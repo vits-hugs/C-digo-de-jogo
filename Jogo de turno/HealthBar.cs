@@ -23,14 +23,14 @@ public class HealthBar : MonoBehaviour
     {
         vmax = jogador.Getvidamax();
         vatual = jogador.Getvida();
-        VatualPorc = vatual/vmax;
-        
-        
+        VatualPorc = vatual/vmax;    
     }
+    
     void FixedUpdate()
     {
         AnimBarra();
     }
+    
     void AnimBarra()
     {
         if(barra.fillAmount < VatualPorc)
@@ -38,11 +38,8 @@ public class HealthBar : MonoBehaviour
             return;
         }
         else
-        {
-            
-            barra.fillAmount -= 0.01f;
-
-            
+        {  
+            barra.fillAmount -= 0.01f;  
         }
     }
 
