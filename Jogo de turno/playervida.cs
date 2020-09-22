@@ -5,13 +5,9 @@ using UnityEngine.UI;
 
 public class playervida : Inimigo
 {
-    private string fala = "mew";
     public override string Agir()
     {
-        Debug.Log("MEAU");
-        return fala;
-    }
-
-   
+        return "teste";
+    }  
 }
 
