@@ -9,21 +9,21 @@ public class GerenciadorBatalha : MonoBehaviour
     #region Ataquelogic
     public float danoPlayer = 2;
     bool isTonto = false;
-
-
-
     #endregion
-
-    public GameObject player;
-    private Inimigo playervida;
+    
+    //referencia ao player a classe Inimigo controla as variaveis chaves tanto do player quanto dos inimigos.
+    public GameObject player; 
+    private Inimigo playervida; // vida do player
+    
     private iniciaCombate initCombat;
-    private GameObject InimigoGO;
-
+    private GameObject InimigoGO; // Referencia ao Game Object do inimigo
+    public Inimigo inimigo; 
+    
+    // texto que fica na tela durante o combate.
     public Text BattleText;
-    public Inimigo inimigo;
-
+   
     public BattleState  state;
-    // Start is called before the first frame update
+    
     public void ReStart()
     {
         initCombat = player.GetComponent<iniciaCombate>();
@@ -31,15 +31,14 @@ public class GerenciadorBatalha : MonoBehaviour
 
         playervida = player.GetComponent<Inimigo>();
 
-        BattleText.text =  "mamão";
-        state = BattleState.PLAYERTURN;
+        BattleText.text =  "Inicio de combate";
         inimigo = InimigoGO.GetComponent<Inimigo>();
         PlayerTurn();
     }
     void PlayerTurn(){
-    
+        state = BattleState.PLAYERTURN;
     }
-    #region Lógica botão
+    #region Lógica botão //Funções para serem chamadas a partir de botões clicaveis no jogo.
     public void OnAttackButton()
     {
         if(state != BattleState.PLAYERTURN)
@@ -61,13 +60,13 @@ public class GerenciadorBatalha : MonoBehaviour
         }
         
     }
-    public void OnBafoButton()
+    public void OnEscudoButton()
     {
         if(state != BattleState.PLAYERTURN)
         {
             return;
         }
-        PlayerBafo();
+        PlayerStun();
          if(inimigo.IsDead() == true){
             Debug.Log("you win");
             state = BattleState.WON;
@@ -80,13 +79,13 @@ public class GerenciadorBatalha : MonoBehaviour
          StartCoroutine(Enemyturn());
         }
     }
-    public void OnCuspidaButton()
+    public void OnDardoButton()
     {
         if(state != BattleState.PLAYERTURN)
         {
             return;
         }
-        Cuspida();
+        DardoVenenoso();
         state = BattleState.ENEMYTURN;
         StartCoroutine(Enemyturn());
 
@@ -97,6 +96,7 @@ public class GerenciadorBatalha : MonoBehaviour
         StartCoroutine(Enemyturn());
     }
     #endregion
+    
     #region ataquescript
     public void PlayerAttack(){
         Debug.Log("pow");
@@ -104,15 +104,15 @@ public class GerenciadorBatalha : MonoBehaviour
         inimigo.TakeDamage(danoPlayer);
       
     }
-    public void PlayerBafo()
+    public void PlayerStun()
     {
-        BattleText.text = "bafo mortal";
+        BattleText.text = "Escudada";
         inimigo.TakeDamage(danoPlayer/2);
         isTonto = true;
     }
-    public void Cuspida()
+    public void DardoVenenoso()
     {
-        BattleText.text = "Cuspida aidética";
+        BattleText.text = "Você envenenou o inimigo";
         inimigo.SetVeneno(1);
 
     }
@@ -146,7 +146,6 @@ public class GerenciadorBatalha : MonoBehaviour
         
        
         if(playervida.IsDead() == true){
-            Debug.Log("you morreu man");
             StartCoroutine(StarteMorte());
         }
         else{
@@ -160,22 +159,7 @@ public class GerenciadorBatalha : MonoBehaviour
 
         }
     }
- //   public void Restart()
-  //  {
-        //initCombat = null;
-        //InimigoGO = null;
-   //     inimigo = null;
-    //    initCombat = player.GetComponent<iniciaCombate>();
-    //    InimigoGO = initCombat.vilao;
 
-    //    playervida = player.GetComponent<Inimigo>();
-
-       // BattleText.text =  "mamão";
-      //  state = BattleState.PLAYERTURN;
-      //  PlayerTurn();
- //   }
-    
-    
 
 
  
