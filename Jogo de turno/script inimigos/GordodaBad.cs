@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GordodaBad : Inimigo
 {
-    private string gfala = "BARRIGADA MONSTRO";
+ private string gfala = "BARRIGADA MONSTRO";
  public override string Agir(){
      Debug.Log("Barrigada");
      Atacar(4);
