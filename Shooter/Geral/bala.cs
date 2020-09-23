@@ -8,8 +8,6 @@ public class bala : MonoBehaviour
     private Vector2 screenBounds;
     public Animator exprode;
     
-
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +34,6 @@ public class bala : MonoBehaviour
             exprode.SetTrigger("exploda");
 
         }
-    
         
         Destroy(this.gameObject,0.1f);
     }
