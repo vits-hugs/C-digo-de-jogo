@@ -9,11 +9,10 @@ public class restart : MonoBehaviour
     {
         
     if(Input.GetKey(KeyCode.R)){
-        
 
         SceneManager.LoadScene("jogo");
     }
-
+    
     }
         
     
