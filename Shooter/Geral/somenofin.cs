@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Destroy objeto que passa do fim da tela
 public class somenofin : MonoBehaviour
 {
     private Vector2 screenBounds;
