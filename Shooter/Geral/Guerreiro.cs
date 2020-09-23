@@ -40,7 +40,6 @@ public class Guerreiro : MonoBehaviour
             transform.position = movement;
             charScale.y = -1;
         
-            
         }
           if(transform.position.y < -8)
         {
@@ -72,9 +71,6 @@ public class Guerreiro : MonoBehaviour
         }
         transform.localScale = charScale;
     }
-
-
-       
 
 
     void OnTriggerEnter2D(Collider2D col)
